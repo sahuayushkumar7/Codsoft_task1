@@ -1,120 +1,62 @@
-# 📚 Student Grade Calculator 
+# Marks Calculator 
 
-A simple **Java console application** that calculates a student's grade based on the marks obtained in different subjects.
-It takes input from the user for multiple subjects, computes the **total marks**, **percentage**, and assigns a **grade** according to predefined grading criteria.
-
----
-
-## ✨ Features
-
-* 📥 Accepts **marks** for multiple subjects from the user
-* ➗ Calculates **total** and **average percentage**
-* 🎯 Assigns a grade based on percentage:
-
-  * **A** → 90% and above
-  * **B** → 80% – 89%
-  * **C** → 70% – 79%
-  * **D** → 60% – 69%
-  * **F** → Below 60%
-* 🛡️ Handles invalid inputs (negative or above maximum marks)
-* 🖥️ Simple **console-based** interface
+A simple console-based Java program to calculate the *total marks, **average percentage, and **grade* of a student based on marks entered for multiple subjects.
 
 ---
 
-## 📂 File Structure
-
-```
-StudentGradeCalculator/
-│── StudentGradeCalculator.java   # Main program file
-│── README.md                     # Project documentation
-```
-
----
-
-## 🚀 How It Works
-
-1. The program asks the user how many subjects they have.
-2. The user enters the marks for each subject.
-3. The program calculates:
-
-   * Total marks obtained
-   * Percentage score
-   * Grade based on percentage
-4. The results are displayed in the console.
+## Features
+- Input marks for any number of subjects.
+- Validates marks to ensure they are between 0 and 100.
+- Calculates:
+  - *Total Marks*
+  - *Average Percentage*
+  - *Grade* (A, B, C, D, or F)
+- Displays results in a clean format.
 
 ---
 
-## 💻 Example Output
-
-```
-Enter number of subjects: 3
-Enter marks for subject 1: 85
-Enter marks for subject 2: 90
-Enter marks for subject 3: 78
-
-Total Marks = 253
-Percentage = 84.33%
-Grade = B
-```
+## Grade Criteria
+| Percentage         | Grade |
+|--------------------|-------|
+| 90% and above      | A     |
+| 75% to 89%         | B     |
+| 60% to 74%         | C     |
+| 40% to 59%         | D     |
+| Below 40%          | F     |
 
 ---
 
-## 🛠️ How to Run
+## Example Usage
 
-### 1️⃣ Compile the program
+Enter the number of subjects: 3 Enter marks obtained in subject 1 (out of 100): 85 Enter marks obtained in subject 2 (out of 100): 90 Enter marks obtained in subject 3 (out of 100): 78
 
-```bash
-javac StudentGradeCalculator.java
-```
-
-### 2️⃣ Run the program
-
-```bash
-java StudentGradeCalculator
-```
+--- Results --- Total Marks: 253 Average Percentage: 84.33333333333333% Grade: B
 
 ---
 
-## 📜 Sample Code
+## Requirements
+- Java Development Kit (JDK) 8 or higher.
 
-```java
-import java.util.Scanner;
+---
 
-public class StudentGradeCalculator {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+## How to Run
+1. Save the code as MarksCalculator.java.
+2. Open a terminal in the directory containing the file.
+3. Compile the program:
+   ```bash
+   javac MarksCalculator.java
 
-        System.out.print("Enter number of subjects: ");
-        int subjects = sc.nextInt();
+4. Run the program:
 
-        int totalMarks = 0;
-        for (int i = 1; i <= subjects; i++) {
-            System.out.print("Enter marks for subject " + i + ": ");
-            int marks = sc.nextInt();
-            if (marks < 0 || marks > 100) {
-                System.out.println("Invalid marks! Please enter between 0 and 100.");
-                i--;
-                continue;
-            }
-            totalMarks += marks;
-        }
-
-        double percentage = (double) totalMarks / subjects;
-        char grade;
-
-        if (percentage >= 90) grade = 'A';
-        else if (percentage >= 80) grade = 'B';
-        else if (percentage >= 70) grade = 'C';
-        else if (percentage >= 60) grade = 'D';
-        else grade = 'F';
-
-        System.out.println("\nTotal Marks = " + totalMarks);
-        System.out.println("Percentage = " + percentage + "%");
-        System.out.println("Grade = " + grade);
-        
-        sc.close();
-    }
-}
+java MarksCalculator
 
 
-If you want, I can also make a **version of this README with emojis and a colorful markdown style** for GitHub so it pops visually. That would make it look more attractive.
+
+
+---
+
+Author
+
+Developed by Ayush as a beginner-friendly Java project.
+
+---
